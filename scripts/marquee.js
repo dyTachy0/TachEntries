@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Your list of random messages will go here
   const messages = [
-    "seals are cool",
-    "moon jellies are my favourite",
-    "what does it feel like to be stung by a jellyfish?",
+    "Shrimp on my desk, im the shrimp... goldshrimp",
+    "Horsin' around the world 🐴🏇 around the world wide web 🌐",
+    "Mango Pinapple Secret Encode?¿...",
+	"You should'nt make Pentaerythriol Tetranitrate at home... but...",
+	"I really like those banana gummies. Hot Damn"
   ];
 
   // This will grab the element with id="marquee-text"
