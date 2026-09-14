@@ -453,14 +453,53 @@ strong {
   filter: drop-shadow(0 0 4px var(--yellow-bright));
 }
 
-.floating-mascot {
-  position: fixed;
-  bottom: 20px;
-  right: -20px;
-  width: 420px;
-  z-index: 999; /* Asegura que flote sobre el resto del contenido */
-  filter: drop-shadow(0 0 8px var(--purple-vibrant)); /* Resplandor temático */
-  user-select: none;
+.tachyon-box {
+  width: 260px;
+  background: #140e1b;
+  border: 2px solid #a87ff3;
+  box-shadow: 4px 4px 0px #000;
+  margin: 1rem auto;
+  font-family: 'DebugMenu', monospace;
+  color: #caa0f5;
+}
+
+.tachyon-box-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b1a3d;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-bottom: 2px solid #a87ff3;
+}
+
+.retro-btn {
+  background: #623b8f;
+  color: #fff;
+  border: 1px solid #caa0f5;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.retro-btn:active {
+  transform: translate(1px, 1px);
+}
+
+#tachyon-canvas-container {
+  width: 100%;
+  height: 260px;
+  position: relative;
+  /* Fondo transparente o radial que armonice con bg_diamond.png */
+  background: radial-gradient(circle, rgba(68, 38, 97, 0.4) 0%, rgba(15, 10, 20, 0.8) 100%);
+  overflow: hidden;
+}
+
+#tachyon-canvas-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .milk-carton {
@@ -490,10 +529,11 @@ strong {
   gap: 12px;
   padding-right: 12px;
   animation: scrollStamps 18s linear infinite;
+  will-change: transform;
 }
 
 /* Pausa la animación si el visitante pasa el ratón por encima */
-.stamp-track:hover {
+.stamp-marquee:hover .stamp-track {
   animation-play-state: paused;
 }
 
@@ -503,11 +543,14 @@ strong {
   width: auto;
   border: 1px solid var(--purple-vibrant);
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .stamp-track img:hover {
   transform: scale(1.08);
   border-color: var(--yellow-bright);
+  position: relative;
+  z-index: 10;
 }
 
 /* CSS for extras */

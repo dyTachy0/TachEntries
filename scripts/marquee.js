@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!marqueeText) return;
 
   // This is the special welcome message that only shows the first time
-  const welcomeMessage = "welcome~ this message will change every refresh, if you do it right!";
+  const welcomeMessage = "welcome to my autistic weblab corner ";
 
   // Checks if the user has visited before using sessionStorage
   if (!sessionStorage.getItem('visited')) {

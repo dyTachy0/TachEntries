@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="style/styles.css">
   <link rel="icon" href="./images/favicon.png" type="image/png">
   <script src="scripts/marquee.js" defer></script>
+  <script type="importmap">
+  {
+	"imports":{
+	 "three": "./scripts/libs/three.module.js"
+	}
+  }
+  </script>
 </head>
 <body>
 
@@ -176,8 +183,19 @@
 	  </div>
 	</div>
 	
-	<img src="./images/chibi-tachyon.gif" alt="Mascota flotante" class="floating-mascot">
-	<img src="./images/15.gif" alt="milk" class="milk-carton">
+	<!-- Widget: Tachyon Lab Assistant -->
+	<div class="tachyon-box">
+	  <div class="tachyon-box-title">
+		<span>AGNES_OS // CHIBI_VIEWER</span>
+		<button id="btn-audio-toggle" class="retro-btn" type="button">▶ SOUND</button>
+	</div>
+  
+	<!-- Contenedor del canvas -->
+	 <div id="tachyon-canvas-container"></div>
+	</div>
+	
+	
+
 
     <footer id="footer" style="margin-top: 10px;">
       © 2026 dyTachy
