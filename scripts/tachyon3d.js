@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import { OrbitControls } from './libs/controls/OrbitControls.js';
-import { MMDLoader } from './libs/loaders/MMDLoader.js';
-import { MMDAnimationHelper } from './libs/animation/MMDAnimationHelper.js';
+import { OrbitControls } from './libs/OrbitControls.js';
+import { MMDLoader } from './libs/MMDLoader.js';
+import { MMDAnimationHelper } from './libs/MMDAnimationHelper.js';
 
 const container = document.getElementById('tachyon-canvas-container');
 const btnAudio = document.getElementById('btn-audio-toggle');
