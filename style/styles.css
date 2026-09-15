@@ -130,7 +130,7 @@ body {
     the other elements, you will need to move that div outside
     of the container */
 #container {
-  max-width: 900px;
+  max-width: 1000px;
   /* this is the width of your layout! */
   /* if you change the above value, scroll to the bottom
      and change the media query according to the comment! */
@@ -144,6 +144,7 @@ body {
 #container a {
   color: var(--blue-light);
   font-weight: bold;
+  
   /* if you want to remove the underline
      you can add a line below here that says:
      text-decoration:none; */
@@ -251,6 +252,7 @@ main {
 
 #rightSidebar {
   order: 3;
+  width: 260px;
 }
 
 footer {
@@ -292,7 +294,6 @@ strong {
   transition: transform 0.1s ease-in-out;
 }
 
-/* --- Persona Card Styling --- */
 .persona-card {
   padding: 16px;
   background: rgba(18, 18, 18, 0.85);
@@ -306,21 +307,100 @@ strong {
 }
 
 .persona-avatar-frame {
-  width: 72px;
-  height: 72px;
-  border: 1px dashed #666;
-  padding: 2px;
-  background: #000;
+  width: 86px;
+  background: #140e1b;               /* Base oscura tachyon en lugar de gris */
+  border: 2px solid #a87ff3;         /* Borde lavanda brillante */
+  box-shadow: 3px 3px 0px #000;       /* Sombra dura */
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.window-titlebar {
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2b1a3d;               /* Fondo del header tachyon */
+  border-bottom: 2px solid #a87ff3;
+  padding: 1px 2px;
+  gap: 3px;
+}
+
+/* Franja degradada */
+.titlebar-gradient {
+  flex: 1;
+  height: 100%;
+  background: linear-gradient(90deg, #ff6a00 0%, #ee1c1c 100%);
+  border: 1px solid #140e1b;
+}
+
+/* --- Botones estilo .retro-btn --- */
+.window-controls {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.win-btn {
+  width: 11px;
+  height: 11px;
+  background: #623b8f;               /* Morado de .retro-btn */
+  border: 1px solid #caa0f5;         /* Delineado lavanda */
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
 }
+
+.win-btn:hover {
+  background: #7a4bb3;
+}
+
+.win-btn:active {
+  transform: translate(1px, 1px);
+}
+
+/* Botón Minimizar: guion inferior en lavanda claro */
+.btn-min::after {
+  content: "";
+  width: 5px;
+  height: 1.5px;
+  background: #ffffff;
+  margin-top: 4px;
+}
+
+/* Botón Maximizar: recuadro con borde blanco */
+.btn-max::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border: 1px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  box-sizing: border-box;
+}
+
+/* Botón Cerrar: X nítida en blanco */
+.btn-close::after {
+  content: "×";
+  font-family: monospace, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  margin-top: -1px;
+}
+
 
 .persona-avatar {
   width: 100%;
-  height: 100%;
+  height: 80px;
   object-fit: cover;
-  image-rendering: pixelated;
+  display: block;
+  border-top: 1px solid #222;
 }
 
 .persona-handle {
@@ -352,7 +432,7 @@ strong {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #a855f7; /* Cambia a verde (#22c55e) cuando quieras */
+  background: #22c55e; /* Cambia a morao (#a855f7) cuando quieras */
   box-shadow: 0 0 6px currentColor;
 }
 
@@ -442,7 +522,7 @@ strong {
 .blinkies-list img {
   max-width: 100%;
   height: auto;
-  image-rendering: pixelated; /* Mantiene nítido el pixel art noventero */
+  image-rendering: pixelated;
   display: block;
   transition: transform 0.15s ease, filter 0.15s ease;
 }
@@ -454,11 +534,12 @@ strong {
 }
 
 .tachyon-box {
-  width: 260px;
+  width: 100%;
   background: #140e1b;
   border: 2px solid #a87ff3;
   box-shadow: 4px 4px 0px #000;
-  margin: 1rem auto;
+  margin: 10px 0 0 0;
+  box-sizing: border-box;
   font-family: 'DebugMenu', monospace;
   color: #caa0f5;
 }
@@ -492,7 +573,7 @@ strong {
   height: 260px;
   position: relative;
   /* Fondo transparente o radial que armonice con bg_diamond.png */
-  background: radial-gradient(circle, rgba(68, 38, 97, 0.4) 0%, rgba(15, 10, 20, 0.8) 100%);
+  background: url('../images/Backrooms_model.jpg') center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -505,7 +586,7 @@ strong {
 .milk-carton {
 	position: fixed;
 	top: 90px;
-	left: 20px;
+	right: 20px;
 	z-index: 999;
 	filter: drop-shadow(0 0 8px var(--purple-vibrant));
 }
@@ -555,11 +636,15 @@ strong {
 
 /* CSS for extras */
 
+.bop{
+	position: fixed;
+}
+
 /* Marquesina estilo Tubo de Ensayo con Fluido Azul Brillante */
 #marquee-container {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   height: 34px;
   line-height: 34px;
   margin: 10px auto;

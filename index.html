@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>The Lab ⚗️</title>
+  <title> The Lab </title>
   <link rel="stylesheet" href="style/styles.css">
   <link rel="icon" href="./images/favicon.png" type="image/png">
   <script src="scripts/marquee.js" defer></script>
+  <!-- Ammo.js para cálculos de físicas MMD -->
+  <script src="https://cdn.jsdelivr.net/npm/ammo.js@0.0.10/ammo.js"></script>
   <script type="importmap">
   {
 	"imports":{
@@ -17,6 +19,8 @@
   </script>
 </head>
 <body>
+	
+	<img class="bop" src="images/bnk.gif">
 
   <div id="container">
     <div id="marquee-container">
@@ -28,10 +32,10 @@
         <ul>
           <li><a href="#"><img src="images/GRVHSHHZ6QBPZJU6Q3NNSJBBAILPNP2E.gif" alt="" class="nav-icon">Home</a></li>
           <li><a href="#"><img src="images/HC7SA7L3ZKT3NOIVL5T6JZ6LM67V6E7C.gif" alt="" class="nav-icon">About</a></li>
-          <li><a href="#"><img src="images/DHZTJ6EYNVZIBZF4NMYRQOXXM44TA66D.gif" alt="" class="nav-icon">Yapping</a></li>
-          <li><a href="#"><img src="images/14.png" alt="" class="nav-icon">experiments</a></li>
-          <li><a href="#"><img src="images/" alt="" class="nav-icon">Link</a></li>
-          <li><a href="#"><img src="images/" alt="" class="nav-icon">Link</a></li>
+          <li><a href="#"><img src="images/DHZTJ6EYNVZIBZF4NMYRQOXXM44TA66D.gif" alt="" class="nav-icon">Logs</a></li>
+          <li><a href="#"><img src="images/14.png" alt="" class="nav-icon">Experiments</a></li>
+          <li><a href="#"><img src="images/" alt="" class="nav-icon"></a></li>
+          <li><a href="#"><img src="images/" alt="" class="nav-icon">Links</a></li>
         </ul>
       </nav>
     </div>
@@ -49,7 +53,7 @@
           </ul>
         </div>
 
-        <h2>Hi there!</h2>
+        <h2>Stuff</h2>
 		<div class="box blinkies-box">
 		  <h3>BLINKIES!</h3>
 		  <div class="blinkies-list">
@@ -75,11 +79,19 @@
 		<section class="box persona-card">
           <div class="persona-header">
             <div class="persona-avatar-frame">
-              <img src="images/kotan.png" alt="Avatar" class="persona-avatar">
+				<div class="window-titlebar">
+					<div class="titlebar-gradient"></div>
+					 <div class="window-controls">
+						<span class="win-btn btn-min"></span>
+						<span class="win-btn btn-max"></span>
+						<span class="win-btn btn-close"></span>
+					</div>
+				</div>
+              <img src="images/pfp.png" alt="Avatar" class="persona-avatar">
             </div>
             <div class="persona-info">
               <h1 class="persona-handle">dyTachy0</h1>
-              <p class="persona-role">[ Lab Operator & Digital Archon ]</p>
+              <p class="persona-role">[ Software Ingenieer, Lab Operator]</p>
               <div class="status-indicator">
                 <span class="status-dot"></span>
                 <span class="status-text">Status: Idle / Offline</span>
@@ -90,14 +102,16 @@
           <hr class="persona-divider">
 
           <div class="persona-bio">
-            <p>Bienvenido al laboratorio. Este sitio es un rincón estático dedicado a experimentos web, estética retro y preservación de notas personales fuera del radar corporativo.</p>
+            <p>Im a software ingenieer, i like expresing myself, create new stuff and thats how i decided to make this page, here u will find what im up to, proyects and maybe vids idk, thanks to stopin by</p>
           </div>
 
           <div class="persona-details-grid">
             <div class="detail-box">
-              <h3>System Specs</h3>
+              <h3>About</h3>
               <ul>
-                <li><strong>Identity:</strong> Anonymous / Pseudonymous</li>
+                <li><strong>Likes</strong> Horses they cool asf
+				(tach)nology,
+				Cookin some tasty gnocchi, videogames ofc</li>
                 <li><strong>Tracking:</strong> 0% Telemetry</li>
                 <li><strong>Cipher:</strong> Enforced TLS</li>
               </ul>
@@ -105,9 +119,9 @@
             <div class="detail-box">
               <h3>Current Focus</h3>
               <ul>
-                <li>Digital Sovereignty & OPSEC</li>
-                <li>Audio synthesis & Static web</li>
-                <li>Minimalist tooling</li>
+                <li>Baskembal</li>
+                <li>House music synthesis & web stuff</li>
+                <li>Scripts with python</li>
               </ul>
             </div>
           </div>
@@ -150,7 +164,19 @@
           <li><a href="/sadgrl/webmastery/downloads/fonts.html" target="_blank" rel="noopener noreferrer">Fonts</a></li>
           <li><a href="/sadgrl/projects/ideas/" target="_blank" rel="noopener noreferrer">Site Ideas</a></li>
         </ul>
-      </aside>
+			<!-- Widget: Tachyon Lab Assistant -->
+		<div class="tachyon-box">
+		 <div class="tachyon-box-title">
+			<span>TACHY_OS // CHIBI_VIEWER</span>
+		</div>
+  
+			<!-- Contenedor del canvas -->
+		<div id="tachyon-canvas-container"></div>
+		 </div>
+
+		<!-- Módulo JavaScript principal del visor 3D -->
+		<script type="module" src="./scripts/tachyon3d.js"></script>
+	  </aside>
     </div>
 	
 	<div class="stamp-marquee">
@@ -183,20 +209,8 @@
 	  </div>
 	</div>
 	
-	<!-- Widget: Tachyon Lab Assistant -->
-	<div class="tachyon-box">
-	  <div class="tachyon-box-title">
-		<span>AGNES_OS // CHIBI_VIEWER</span>
-		<button id="btn-audio-toggle" class="retro-btn" type="button">▶ SOUND</button>
-	</div>
-  
-	<!-- Contenedor del canvas -->
-	 <div id="tachyon-canvas-container"></div>
-	</div>
+	<img class="milk-carton"src="images/15.gif" alt="pilk">
 	
-	
-
-
     <footer id="footer" style="margin-top: 10px;">
       © 2026 dyTachy
     </footer>
